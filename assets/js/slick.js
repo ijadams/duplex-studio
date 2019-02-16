@@ -1580,6 +1580,7 @@
             if (_.options.infinite === true) {
                 rangeStart = _.currentSlide + (_.options.slidesToShow / 2 + 1);
                 rangeEnd = rangeStart + _.options.slidesToShow + 2;
+                console.log(rangeEnd);
             } else {
                 rangeStart = Math.max(0, _.currentSlide - (_.options.slidesToShow / 2 + 1));
                 rangeEnd = 2 + (_.options.slidesToShow / 2 + 1) + _.currentSlide;
@@ -1592,6 +1593,9 @@
                 if (rangeEnd <= _.slideCount) rangeEnd++;
             }
         }
+
+        //IAN INFINITE LAZY LOAD FIX
+        rangeEnd = rangeStart + _.options.slidesToShow + 2;
 
         loadRange = _.$slider.find('.slick-slide').slice(rangeStart, rangeEnd);
 
@@ -1749,7 +1753,6 @@
             imageSrcSet,
             imageSizes,
             imageToLoad;
-        console.log($imgsToLoad);
         if ( $imgsToLoad.length ) {
 
             image = $imgsToLoad.first();
