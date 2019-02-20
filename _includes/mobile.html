@@ -22,9 +22,71 @@
 		<span class="next"></span>
 		<span class="prev"></span>
 		<ul>
-			{% for image in post.mobile_images %}
-			<li style="background-image: url('{{ image }}');background-size: cover;"></li>
-			{% endfor %}
+			{% if post.slide_1_dark_toggle == true %}
+			<li class="active dark">
+				{% else %}
+			<li class="active">
+				{% endif %}
+				{% if post.slide_1_color %}
+				<span class="slide--color">{{post.slide_1_color}}</span>
+				{% endif %}
+				<div class="full" data-lazy="{{ post.slide_1_mobile }}">
+				</div>
+			</li>
+
+			{% if post.slide_2.size > 0 %}
+			{% if post.slide_2_dark_toggle == true %}
+			<li class="dark">
+				{% else %}
+			<li>
+				{% endif %}
+				{% if post.slide_2_color %}
+				<span class="slide--color">{{post.slide_2_color}}</span>
+				{% endif %}
+				<div class="full" data-lazy="{{ post.slide_2_mobile }}">
+				</div>
+			</li>
+			{% endif %}
+
+			{% if post.slide_3.size > 0 %}
+			{% if post.slide_3_dark_toggle == true %}
+			<li class="dark">
+				{% else %}
+			<li>
+				{% endif %}
+				{% if post.slide_3_color %}
+				<span class="slide--color">{{post.slide_3_color}}</span>
+				{% endif %}
+				<div class="full" data-lazy="{{ post.slide_3_mobile }}">
+				</div>
+			</li>
+			{% endif %}
+
+			{% if post.slide_4.size > 0 %}
+			{% if post.slide_4_dark_toggle == true %}
+			<li class="dark">
+				{% else %}
+			<li>
+				{% endif %}
+				{% if post.slide_4_color %}
+				<span class="slide--color">{{post.slide_4_color}}</span>
+				{% endif %}
+				<div class="full" data-lazy="{{ post.slide_4_mobile }}">
+				</div>
+			</li>
+			{% endif %}
+
+			{% if post.slide_5.size > 0 %}
+			{% if post.slide_5_dark_toggle == true %}
+			<li class="dark">
+				{% else %}
+			<li>
+				{% endif %}
+				<div class="full" data-lazy="{{ post.slide_5_mobile }}">
+				</div>
+			</li>
+			{% endif %}
+
 		</ul>
 		<div class="description">
 			<p>{{ post.project_title }}</p>

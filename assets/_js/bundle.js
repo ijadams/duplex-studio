@@ -40,11 +40,19 @@ $(document).ready(function () {
   }, 4000);
 
   // SLICK CAROUSEL
-  $('section.project--slide:nth-of-type(2) ul').slick({
-    arrows: false,
-    infinite: true,
-    lazyLoad: 'progressive',
-  });
+  if (isDesktop()) {
+    $('section.project--slide:nth-of-type(2) ul').slick({
+      arrows: false,
+      infinite: true,
+      lazyLoad: 'progressive',
+    });
+  } else {
+    $('section.project--slide ul').slick({
+      arrows: false,
+      infinite: true,
+      lazyLoad: 'ondemand',
+    });
+  }
 
   $('.project--slide ul').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
     let next;
@@ -162,8 +170,9 @@ $(document).ready(function () {
   };
 
   const isDesktop = () => {
-    let width = $(window).width();
-    return width > 768;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      return true;
+    }
   };
 
   // CENTER CLICK
