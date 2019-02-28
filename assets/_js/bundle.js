@@ -201,7 +201,6 @@ $(document).ready(function () {
   // SLICK initSlideEvents
   const slickInit = () => {
     const position = activeIndex + 2;
-    console.log($('section.project--slide:nth-of-type(' + position + ') ul'));
     if (!$('section.project--slide:nth-of-type(' + position + ') ul').hasClass('slick-initialized')) {
       $('section.project--slide:nth-of-type(' + position + ') ul').slick({
         arrows: false,
