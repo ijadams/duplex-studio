@@ -40,9 +40,10 @@ $(document).ready(function () {
   }, 4000);
 
   // SLICK CAROUSEL
-  $('.project--slide ul').slick({
+  $('section.project--slide:nth-of-type(2) ul').slick({
     arrows: false,
     infinite: true,
+    lazyLoad: 'progressive',
   });
 
   $('.project--slide ul').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
@@ -105,6 +106,7 @@ $(document).ready(function () {
           navigate('previous');
         } else {
           animating = true;
+          slickInit();
           navigate('next');
         }
       }
@@ -164,6 +166,14 @@ $(document).ready(function () {
     return width > 768;
   };
 
+  if (!isDesktop()) {
+    $('section.project--slide ul').slick({
+      arrows: false,
+      infinite: true,
+      lazyLoad: 'ondemand',
+    });
+  }
+
   // CENTER CLICK
   $('.project--slide').click((e) => {
     let $tgt = $(e.target);
@@ -187,4 +197,18 @@ $(document).ready(function () {
   $('canvas.more').each(function() {
     canvasDraw(this);
   });
+
+  // SLICK initSlideEvents
+  const slickInit = () => {
+    const position = activeIndex + 2;
+    console.log($('section.project--slide:nth-of-type(' + position + ') ul'));
+    if (!$('section.project--slide:nth-of-type(' + position + ') ul').hasClass('slick-initialized')) {
+      $('section.project--slide:nth-of-type(' + position + ') ul').slick({
+        arrows: false,
+        infinite: true,
+        lazyLoad: 'ondemand',
+      });
+    }
+  };
+
 });
