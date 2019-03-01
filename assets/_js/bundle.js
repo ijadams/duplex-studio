@@ -1,6 +1,12 @@
 import {canvasDraw, clearCanvas} from './draw';
 
 $(document).ready(function () {
+
+  const isDesktop = () => {
+    let width = $(window).width();
+    return width > 768;
+  };
+
   // SMOOTH PAGE LOAD
   $('body').removeClass('fade-out');
 
@@ -40,11 +46,19 @@ $(document).ready(function () {
   }, 4000);
 
   // SLICK CAROUSEL
-  $('section.project--slide:nth-of-type(2) ul').slick({
-    arrows: false,
-    infinite: true,
-    lazyLoad: 'progressive',
-  });
+  if (isDesktop()) {
+    $('section.project--slide:nth-of-type(2) ul').slick({
+      arrows: false,
+      infinite: true,
+      lazyLoad: 'progressive',
+    });
+  } else {
+    $('section.project--slide ul').slick({
+      arrows: false,
+      infinite: true,
+      lazyLoad: 'progressive',
+    });
+  }
 
   $('.project--slide ul').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
     let next;
@@ -160,19 +174,6 @@ $(document).ready(function () {
       $('body #toggle.button_container span').css('background', color);
     }
   };
-
-  const isDesktop = () => {
-    let width = $(window).width();
-    return width > 768;
-  };
-
-  if (!isDesktop()) {
-    $('section.project--slide ul').slick({
-      arrows: false,
-      infinite: true,
-      lazyLoad: 'ondemand',
-    });
-  }
 
   // CENTER CLICK
   $('.project--slide').click((e) => {
