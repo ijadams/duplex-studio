@@ -50,13 +50,18 @@ $(document).ready(function () {
     $('section.project--slide:nth-of-type(2) ul').slick({
       arrows: false,
       infinite: true,
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
+    });
+    $('section.project--slide:nth-of-type(3) ul').slick({
+      arrows: false,
+      infinite: true,
+      lazyLoad: 'progressive',
     });
   } else {
     $('section.project--slide ul').slick({
       arrows: false,
       infinite: true,
-      lazyLoad: 'progressive',
+      lazyLoad: 'ondemand',
     });
   }
 
