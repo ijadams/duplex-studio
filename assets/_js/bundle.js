@@ -50,7 +50,7 @@ $(document).ready(function () {
     $('section.project--slide:nth-of-type(2) ul').slick({
       arrows: false,
       infinite: true,
-      lazyLoad: 'progressive',
+      lazyLoad: 'ondemand',
     });
   } else {
     $('section.project--slide ul').slick({
