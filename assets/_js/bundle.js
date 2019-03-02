@@ -46,21 +46,11 @@ $(document).ready(function () {
   }, 4000);
 
   // SLICK CAROUSEL
-  if (isDesktop()) {
-    setTimeout(() => {
-      $('section.project--slide:nth-of-type(2) ul').slick({
-        arrows: false,
-        infinite: true,
-        lazyLoad: 'ondemand',
-      });
-    }, 4000);
-  } else {
-    $('section.project--slide ul').slick({
-      arrows: false,
-      infinite: true,
-      lazyLoad: 'progressive',
-    });
-  }
+  $('section.project--slide ul').slick({
+    arrows: false,
+    infinite: true,
+    lazyLoad: 'progressive',
+  });
 
   // background image lazy load
   $('section.project--slide ul').on('lazyLoaded', function (e, slick, image, imageSource) {
