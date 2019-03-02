@@ -47,11 +47,13 @@ $(document).ready(function () {
 
   // SLICK CAROUSEL
   if (isDesktop()) {
-    $('section.project--slide:nth-of-type(2) ul').slick({
-      arrows: false,
-      infinite: true,
-      lazyLoad: 'ondemand',
-    });
+    setTimeout(() => {
+      $('section.project--slide:nth-of-type(2) ul').slick({
+        arrows: false,
+        infinite: true,
+        lazyLoad: 'ondemand',
+      });
+    }, 4000);
   } else {
     $('section.project--slide ul').slick({
       arrows: false,
