@@ -15,3 +15,8 @@
 .full {
 	background-size: cover;
 }
+
+
+.project--slide ul:not(.slick-initialized) {
+	display: none !important;
+}

@@ -50,20 +50,21 @@ $(document).ready(function () {
     $('section.project--slide:nth-of-type(2) ul').slick({
       arrows: false,
       infinite: true,
-      lazyLoad: 'progressive',
-    });
-    $('section.project--slide:nth-of-type(3) ul').slick({
-      arrows: false,
-      infinite: true,
-      lazyLoad: 'progressive',
+      lazyLoad: 'ondemand',
     });
   } else {
     $('section.project--slide ul').slick({
       arrows: false,
       infinite: true,
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
     });
   }
+
+  // background image lazy load
+  $('section.project--slide ul').on('lazyLoaded', function (e, slick, image, imageSource) {
+    image.parent().css('background-image', 'url("' + imageSource + '")');
+    image.hide();
+  });
 
   $('.project--slide ul').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
     let next;
@@ -83,16 +84,16 @@ $(document).ready(function () {
   // LEFT PREV CLICK
   $('.prev').click(() => {
     if (!animating && isDesktop()) {
-    clearCanvas();
-    toggleSlide('previous');
+      clearCanvas();
+      toggleSlide('previous');
     }
   });
 
   // RIGHT NEXT CLICK
   $('.next').click(() => {
     if (!animating && isDesktop()) {
-    clearCanvas();
-    toggleSlide('next');
+      clearCanvas();
+      toggleSlide('next');
     }
   });
 
@@ -200,7 +201,7 @@ $(document).ready(function () {
     }
   };
 
-  $('canvas.more').each(function() {
+  $('canvas.more').each(function () {
     canvasDraw(this);
   });
 

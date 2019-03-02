@@ -1594,7 +1594,9 @@
         }
 
         //IAN INFINITE LAZY LOAD FIX
-        rangeEnd = rangeStart + _.options.slidesToShow + 2;
+        rangeEnd = rangeStart + _.options.slidesToShow + 1;
+
+        console.log('rangeEnd', rangeEnd);
 
         loadRange = _.$slider.find('.slick-slide').slice(rangeStart, rangeEnd);
 
@@ -1752,6 +1754,7 @@
             imageSrcSet,
             imageSizes,
             imageToLoad;
+        console.log('$imgsToLoad', $imgsToLoad);
         if ( $imgsToLoad.length ) {
 
             image = $imgsToLoad.first();
