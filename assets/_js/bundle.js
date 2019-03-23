@@ -212,9 +212,10 @@ $(window).on('load', function () {
     }
   };
 
-  $('canvas.more').each(function () {
-    canvasDraw(this);
-  });
+  // commenting out drawing func
+  // $('canvas.more').each(function () {
+  //   //   canvasDraw(this);
+  //   // });
 
   // SLICK initSlideEvents
   const slickInit = () => {
