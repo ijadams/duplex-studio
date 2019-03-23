@@ -6,6 +6,8 @@
 	}
 	img {
 		max-width: 750px;
+		opacity: 0;
+		transition: 1s ease-in;
 	}
     .right {
 		background: black;
