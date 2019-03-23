@@ -1,14 +1,14 @@
 import {canvasDraw, clearCanvas} from './draw';
 
-$(document).ready(function () {
+$(window).on('load', function () {
+
+  // SMOOTH PAGE LOAD
+  $('body').removeClass('fade-out');
 
   const isDesktop = () => {
     let width = $(window).width();
     return width > 768;
   };
-
-  // SMOOTH PAGE LOAD
-  $('body').removeClass('fade-out');
 
   // NAV BAR
   $('#toggle').click(function () {
@@ -38,12 +38,29 @@ $(document).ready(function () {
   let animating = true;
   let sectionLength = $('section').length;
 
-  // load second slide after animation
-  setTimeout(() => {
-    if (activeIndex === 0 && isDesktop()) {
-      navigate('next');
+
+  function a() {
+    return new Promise(function (resolve) {
+      setTimeout(function () {
+        $('#intro .left img').css('opacity', '1');
+        $('#intro .right img').css('opacity', '1');
+        resolve();
+      }, 800);
+    });
+  }
+
+  function b() {
+    // load second slide after animation
+    if (isDesktop()) {
+      setTimeout(function () {
+        if (activeIndex === 0) {
+          navigate('next');
+        }
+      }, 6000);
     }
-  }, 4000);
+  }
+
+  a().then(b);
 
   // SLICK CAROUSEL
   $('section.project--slide ul').slick({
@@ -128,6 +145,8 @@ $(document).ready(function () {
   const navigate = (action) => {
     if (action === 'previous' && activeIndex == 0) {
       activeIndex = 0;
+    } else if (action === 'previous' && activeIndex == 1) {
+      activeIndex = 1;
     } else if (action === 'next' && (activeIndex === (sectionLength - 1))) {
       activeIndex = sectionLength - 1;
     } else if (action === 'next') {
