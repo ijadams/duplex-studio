@@ -38,6 +38,7 @@ $(window).on('load', function () {
   let animating = true;
   let sectionLength = $('section').length;
 
+
   function a() {
     return new Promise(function (resolve) {
       setTimeout(function () {
@@ -50,11 +51,13 @@ $(window).on('load', function () {
 
   function b() {
     // load second slide after animation
-    setTimeout(function () {
-      if (activeIndex === 0 && isDesktop()) {
-        navigate('next');
-      }
-    }, 6000);
+    if (isDesktop()) {
+      setTimeout(function () {
+        if (activeIndex === 0) {
+          navigate('next');
+        }
+      }, 6000);
+    }
   }
 
   a().then(b);
