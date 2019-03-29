@@ -1,7 +1,6 @@
 ---
 label: intro
 hide_body: false
-is_partial: false
 fields:
 - type: file
   name: intro_image_left
