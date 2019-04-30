@@ -168,13 +168,13 @@ section {
 	}
 	.left {
 		float: left;
-		background-position: right;
+		background-position-x: calc(100% + 1px);
 		&.leave {
 			transform: translateY(150%);
 		}
 	}
 	.right {
-		background-position: left;
+		background-position-x: 0;
 		&.leave {
 			transform: translateY(-150%);
 		}
