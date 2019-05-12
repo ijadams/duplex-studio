@@ -36,7 +36,7 @@ $(window).on('load', function () {
 
   let activeIndex = 0;
   let animating = true;
-  let sectionLength = $('section').length;
+  let sectionLength = $('#desktop section').length;
 
 
   function a() {
