@@ -31,7 +31,7 @@ export function onInit() {
 
   let activeIndex = 0;
   let animating = true;
-  let sectionLength = $('section').length;
+  let sectionLength = $('#desktop section').length;
 
   // SLICK CAROUSEL
   $('section.project--slide ul').slick({
@@ -111,6 +111,8 @@ export function onInit() {
   });
 
   const navigate = (action) => {
+    console.log('activeIndex', activeIndex);
+    console.log('sectionLength', sectionLength);
     if (action === 'previous' && activeIndex == 0) {
       activeIndex = 0;
     } else if (action === 'previous' && activeIndex == 1) {
