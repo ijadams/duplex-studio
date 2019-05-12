@@ -111,8 +111,6 @@ export function onInit() {
   });
 
   const navigate = (action) => {
-    console.log('activeIndex', activeIndex);
-    console.log('sectionLength', sectionLength);
     if (action === 'previous' && activeIndex == 0) {
       activeIndex = 0;
     } else if (action === 'previous' && activeIndex == 1) {
