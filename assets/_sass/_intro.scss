@@ -4,6 +4,11 @@
 	&.active {
 		z-index: 12 !important;
 	}
+	h2 {
+		letter-spacing: 1px;
+		color: white;
+		padding: 0 5px;
+	}
 	img {
 		max-width: 750px;
 		transition: 1s ease-in;

@@ -199,6 +199,8 @@ export function onInit() {
         navigate('next');
       }
     }, 700);
+  } else {
+    $('.preloader-wrap').fadeOut(300);
   }
 
 }
