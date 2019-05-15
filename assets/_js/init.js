@@ -192,6 +192,57 @@ export function onInit() {
     }
   };
 
+  // hover pagination
+  $('.next').hover(function (e) {
+      // stuff to do on mouse enter
+      e.preventDefault;
+      TweenMax.to($('section.project--slide.active .slick-track'), 0.6, {
+        marginLeft: '-180px',
+        ease: Quad.easeOut,
+      });
+      TweenMax.to($('.slick-current'), 0.6, {
+        x: 100,
+        ease: Quad.easeOut,
+      });
+    },
+    function (e) {
+      // stuff to do on mouse leave
+      e.preventDefault;
+      TweenMax.to($('section.project--slide.active .slick-track'), 0.4, {
+        marginLeft: 0,
+        ease: Quad.easeInOut,
+      });
+      TweenMax.to($('.slick-current'), 0.4, {
+        x: 0,
+        ease: Quad.easeInOut,
+      });
+    });
+
+  $('.prev').hover(function (e) {
+      // stuff to do on mouse enter
+      e.preventDefault;
+      TweenMax.to($('section.project--slide.active .slick-track'), 0.6, {
+        marginLeft: '180px',
+        ease: Quad.easeOut,
+      });
+      TweenMax.to($('.slick-current'), 0.6, {
+        x: -100,
+        ease: Quad.easeOut,
+      });
+    },
+    function (e) {
+      // stuff to do on mouse leave
+      e.preventDefault;
+      TweenMax.to($('section.project--slide.active .slick-track'), 0.4, {
+        marginLeft: 0,
+        ease: Sine.easeInOut,
+      });
+      TweenMax.to($('.slick-current'), 0.4, {
+        x: 0,
+        ease: Sine.easeInOut,
+      });
+    });
+
   if (isDesktop()) {
     setTimeout(function () {
       if (activeIndex === 0) {
