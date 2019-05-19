@@ -197,7 +197,7 @@ export function onInit() {
       // stuff to do on mouse enter
       e.preventDefault;
       TweenMax.to($('section.project--slide.active .slick-track'), 0.6, {
-        marginLeft: '-180px',
+        marginLeft: '-181px',
         ease: Quad.easeOut,
       });
       TweenMax.to($('.slick-current'), 0.6, {

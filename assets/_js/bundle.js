@@ -5,6 +5,6 @@ $(window).on('load', function () {
   // SMOOTH PAGE LOAD
   $('body').removeClass('fade-out');
   loader().then(() => {
-    onInit();
+  onInit();
   }, 200);
 });
