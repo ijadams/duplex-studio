@@ -146,15 +146,9 @@ section {
 	}
 	.prev {
 		left: 0;
-		&:hover {
-			background: -webkit-linear-gradient(right, rgba(255,255,255,0), rgba(255,255,255,0.1));
-		}
 	}
 	.next {
 		right: 0;
-		&:hover {
-			background: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.1));
-		}
 	}
 	.left, .right {
 		display: inline-block;
