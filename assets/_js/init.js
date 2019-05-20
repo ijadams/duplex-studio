@@ -111,6 +111,7 @@ export function onInit() {
   });
 
   const navigate = (action) => {
+    $('.more').click();
     if (action === 'previous' && activeIndex == 0) {
       activeIndex = 0;
     } else if (action === 'previous' && activeIndex == 1) {
@@ -197,7 +198,7 @@ export function onInit() {
       // stuff to do on mouse enter
       e.preventDefault;
       TweenMax.to($('section.project--slide.active .slick-track'), 0.6, {
-        marginLeft: '-181px',
+        marginLeft: '-180px',
         ease: Quad.easeOut,
       });
       TweenMax.to($('.slick-current'), 0.6, {
@@ -235,11 +236,11 @@ export function onInit() {
       e.preventDefault;
       TweenMax.to($('section.project--slide.active .slick-track'), 0.4, {
         marginLeft: 0,
-        ease: Sine.easeInOut,
+        ease: Quad.easeOut,
       });
       TweenMax.to($('.slick-current'), 0.4, {
         x: 0,
-        ease: Sine.easeInOut,
+        ease: Quad.easeOut,
       });
     });
 
