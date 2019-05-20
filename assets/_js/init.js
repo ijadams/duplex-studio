@@ -111,6 +111,7 @@ export function onInit() {
   });
 
   const navigate = (action) => {
+    $('section.active').addClass('trans');
     $('.more').click();
     if (action === 'previous' && activeIndex == 0) {
       activeIndex = 0;
@@ -148,6 +149,7 @@ export function onInit() {
 
   const removeActiveClass = () => {
     $('section.active ul').slick('slickGoTo', 0);
+    $('section.active').removeClass('trans');
     $('section.active').removeClass('active');
     $('section').eq(activeIndex).addClass('active');
     animating = false;

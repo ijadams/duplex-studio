@@ -99,6 +99,10 @@ section {
 	}
 	&.active {
 		z-index: 10 !important;
+		background: black;
+		&.trans {
+			background: none;
+		}
 		.description p {
 			opacity: 1;
 		}
