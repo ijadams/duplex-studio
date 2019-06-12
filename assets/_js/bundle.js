@@ -6,5 +6,5 @@ $(window).on('load', function () {
   $('body').removeClass('fade-out');
   loader().then(() => {
   onInit();
-  }, 200);
+  }, 1200);
 });
