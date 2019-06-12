@@ -99,7 +99,6 @@ section {
 	}
 	&.active {
 		z-index: 10 !important;
-		background: black;
 		&.trans {
 			background: none;
 		}
@@ -163,6 +162,7 @@ section {
 		background-repeat: no-repeat;
 		background-size: cover;
 		will-change: transform;
+		transform: translateZ(0);
 	}
 	.left {
 		float: left;
